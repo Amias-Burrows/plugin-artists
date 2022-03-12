@@ -224,7 +224,7 @@
 @media (min-width: 768px) {
 	.artists-masonry {
 		display: grid;
-		width: 90vw;
+		width: 90vw !important;
 		margin: 0;
 		grid-template-columns: repeat(3, minmax(auto, 30% ));
 		grid-auto-flow: dense;
