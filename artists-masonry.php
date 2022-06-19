@@ -12,7 +12,7 @@
  */
 
 
-	defined('ABSPATH' or die("This file is not accessable directly."));
+	defined('ABSPATH') or die("This file is not accessable directly.");
 
 	class artistsMasonry {
 		function styles() {
