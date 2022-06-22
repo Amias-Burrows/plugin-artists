@@ -55,6 +55,6 @@ register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
 register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 
 add_action('wp_enqueue_scripts', array($artistsMasonry, 'styles'));
-add_action('admin_menu', array($artistsMasonry . 'settings'));
+add_action('admin_menu', array($artistsMasonry,  'settings'));
 add_action('init', array($artistsMasonry, 'register_block'));
 ?>
