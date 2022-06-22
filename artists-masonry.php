@@ -15,7 +15,7 @@
 defined('ABSPATH') or die("This file is not accessable directly.");
 
 class artistsMasonry {
-	function __contruct() {
+	function __construct() {
 		add_action('wp_enqueue_scripts', array($this, 'styles'));
 		add_action('admin_menu', array($this,  'settings'));
 		add_action('init', array($this, 'register_block'));
@@ -30,7 +30,9 @@ class artistsMasonry {
 	}
 
 	function menu_contents() {?>
-		<p>This is the plugin contents</p>
+		<div class='wrap'>
+			<h1>Homepage Menu Settings</h1>
+		</div>
 	<?php
 	}
 
