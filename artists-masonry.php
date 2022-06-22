@@ -16,6 +16,9 @@ defined('ABSPATH') or die("This file is not accessable directly.");
 
 class artistsMasonry {
 	function __contruct() {
+		add_action('wp_enqueue_scripts', array($this, 'styles'));
+		add_action('admin_menu', array($this,  'settings'));
+		add_action('init', array($this, 'register_block'));
 	}
 
 	function styles() {
@@ -23,7 +26,7 @@ class artistsMasonry {
 	}
 
 	function settings() {
-		add_options_page('Homepage Menu', 'AR Burrows Homepage Menu', 'manage_options', 'ar-burrows-homepage-menu', array($artistsMasonry, 'menu_contents') );
+		add_options_page('Homepage Menu', 'AR Burrows Homepage Menu', 'manage_options', 'ar-burrows-homepage-menu', array($this, 'menu_contents') );
 	}
 
 	function menu_contents() {?>
@@ -54,7 +57,4 @@ register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
 //Uninstall
 register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 
-add_action('wp_enqueue_scripts', array($artistsMasonry, 'styles'));
-add_action('admin_menu', array($artistsMasonry,  'settings'));
-add_action('init', array($artistsMasonry, 'register_block'));
 ?>
