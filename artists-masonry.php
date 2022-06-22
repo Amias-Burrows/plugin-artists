@@ -17,17 +17,29 @@ defined('ABSPATH') or die("This file is not accessable directly.");
 class artistsMasonry {
 	function __construct() {
 		add_action('wp_enqueue_scripts', array($this, 'styles'));
-		add_action('admin_menu', array($this,  'settings'));
+		add_action('admin_menu', array($this,  'page'));
 		add_action('init', array($this, 'register_block'));
+		add_action('admin_init', array($this, 'settings'));
 	}
 
 	function styles() {
 		wp_enqueue_style('artists-masonry', plugins_url('assets/css/masonry.css', __FILE__), array(), null, 'all');
 	}
 
-	function settings() {
+	function page() {
 		add_options_page('Homepage Menu', 'AR Burrows Homepage Menu', 'manage_options', 'ar-burrows-homepage-menu', array($this, 'menu_contents') );
 	}
+
+	function settings() {
+			//First Setting
+		add_settings_section('arb_masonry_section', 'subtitle', 'Description of the section.  Lorem ipsum dolor sit amet', 'ar-burrows-homepage-menu');
+		add_settings_field('arb_masonry_location', 'Display Location', array($this, 'location_html'), 'ar-burrows-homepage-menu', 'arb_masonry_section');
+		register_setting('ar-burrows-masonry', 'arb_masonry_location', array('sanitise_callback' => 'sanitize_text_field', 'default' => '0'));
+	}
+
+	function location_html() { ?>
+		<p>section</p>
+	 <?php }
 
 	function menu_contents() {?>
 		<div class='wrap'>
