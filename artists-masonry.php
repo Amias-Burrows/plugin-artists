@@ -23,7 +23,7 @@ class artistsMasonry {
 	}
 
 	function settings() {
-		add_options_page('Homepage Menu', 'AR Burrows Homepage Menu', 'manage_options', 'ar_burrows_homepage_menu', array($artistsMasonry, 'menu_contents') );
+		add_options_page('Homepage Menu', 'AR Burrows Homepage Menu', 'manage_options', 'ar-burrows-homepage-menu', array($artistsMasonry, 'menu_contents') );
 	}
 
 	function menu_contents() {?>
