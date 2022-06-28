@@ -7,5 +7,5 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {
 	},
 	save: function(props) {
 		return react.createElement('p', null, 'Hola Mundo (From the Frontend)');
-	},
+	}
 });

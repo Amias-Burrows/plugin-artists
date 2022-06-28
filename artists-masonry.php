@@ -39,6 +39,10 @@ class artistsMasonry {
 if (class_exists('artistsMasonry')) {
 	$artistsMasonry = new artistsMasonry();
 }
+function artists_gutenberg_block() {
+	wp_enqueue_script('artists_masonry_block', plugin_dir_url(__FILE__) . 'assets/js/block.js', array('wp-blocks', 'wp-editor'), true, false);
+}
+add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 	//Activation
 register_activation_hook( __FILE__, array($artistsMasonry, 'activate'));
 //Deactivation
@@ -46,8 +50,4 @@ register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
 //Uninstall
 register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 
-function artists_gutenberg_block() {
-	wp_enqueue_script('artists_masonry_block', plugins_url('assets/js/block.js', __FILE__), array('wp-blocks', 'wp-editor'), true, false);
-}
-add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 ?>
