@@ -49,5 +49,5 @@ register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 function artists_gutenberg_block() {
 	wp_enqueue_script('artists_masonry_block', plugins_url('assets/js/block.js', __FILE__), array('wp-blocks', 'wp-editor'), true, false);
 }
-add_action('enqueue_block_editor_assets', 'artists-gutenberg_block');
+add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 ?>
