@@ -1,6 +1,4 @@
-const { registerBlockType } = window.wp.blocks;
-
-export default registerBlockType("artists-masonry/grid-format", {
+wp.blocks.registerBlockType("artists-masonry/grid-format", {
 	title: 'Artists Attic Masonry Grid',
 	icon: 'grid-view',
 	category: 'design',
