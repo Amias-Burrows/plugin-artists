@@ -1,4 +1,4 @@
-import { registerBlockType } from '@wordpress/blocks';
+const { registerBlockType } = window.wp.blocks;
 
 registerBlockType("artists-masonry/grid-format", {
 	title: 'Artists Attic Masonry Grid',
