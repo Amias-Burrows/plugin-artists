@@ -3,9 +3,9 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {
 	icon: 'grid-view',
 	category: 'design',
 	edit: function(props) {
-		return <p>Hello World (from the editor)</p>;
+		return React.createElement('p', null, 'Hello World (From the Editor)');
 	},
 	save: function(props) {
-		return <p>Hola Mundo (from the frontend)</p>;
+		return react.createElement('p', null, 'Hola Mundo (From the Frontend)');
 	},
 });
