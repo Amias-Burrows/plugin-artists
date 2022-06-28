@@ -20,6 +20,11 @@ class artistsMasonry {
 		add_action('admin_menu', array($this,  'page'));
 		add_action('init', array($this, 'register_block'));
 		add_action('admin_init', array($this, 'settings'));
+		add_action('enqueue_block_editor_assets', array($this, 'gutenberg_block'));
+	}
+
+	function gutenberg_block() {
+		wp_enqueue_script('artists_masonry_block', plugin_dir_url(__FILE__) . 'assets/js/block.js', array('wp-blocks', 'wp-editor'), true, false);
 	}
 
 	function styles() {

@@ -1,10 +1,13 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 registerBlockType("artists-masonry/grid-format", {
-	edit: function() {
+	title: 'Artists Attic Masonry Grid',
+	icon: 'grid-view',
+	category: 'design',
+	edit: function(props) {
 		return <p>Hello World (from the editor)</p>;
 	},
-	save: function() {
+	save: function(props) {
 		return <p>Hola Mundo (from the frontend)</p>;
 	},
 });
