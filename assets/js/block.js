@@ -1,4 +1,4 @@
-wp.blocks.registerBlockType("artists-masonry/custom-block", {
+wp.blocks.registerBlockType('artists-masonry/custom-block', {
 	title: 'Artists Attic Masonry Grid',
 	icon: 'grid-view',
 	category: 'design',

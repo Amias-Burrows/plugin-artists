@@ -17,12 +17,8 @@ defined('ABSPATH') or die("This file is not accessable directly.");
 class artistsMasonry {
 	function __construct() {
 		add_action('wp_enqueue_scripts', array($this, 'styles'));
-		add_action('enqueue_block_editor_assets', array($this, 'gutenberg_block'));
 	}
 
-	function gutenberg_block() {
-		wp_enqueue_script('artists_masonry_block', plugin_dir_url(__FILE__) . 'assets/js/block.js', array('wp-blocks', 'wp-editor'), true, false);
-	}
 
 	function styles() {
 		wp_enqueue_style('artists-masonry', plugins_url('assets/css/masonry.css', __FILE__), array(), null, 'all');
@@ -50,4 +46,8 @@ register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
 //Uninstall
 register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 
+function artists_gutenberg_block() {
+	wp_enqueue_script('artists_masonry_block', plugins_url('assets/js/block.js', __FILE__), array('wp-blocks', 'wp-editor'), true, false);
+}
+add_action('enqueue_block_editor_assets', 'artists-gutenberg_block');
 ?>
