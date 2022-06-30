@@ -39,15 +39,42 @@ class artistsMasonry {
 if (class_exists('artistsMasonry')) {
 	$artistsMasonry = new artistsMasonry();
 }
+
+function artists_styles() {
+	wp_enqueue_style('artists-masonry', plugins_url('assets/css/masonry.css', __FILE__), array(), null, 'all');
+}
+
 function artists_gutenberg_block() {
 	wp_enqueue_script('artists_masonry_block', plugin_dir_url(__FILE__) . 'assets/js/block.js', array('wp-blocks', 'wp-editor'), true, false);
 }
+
+function artists_activate() {
+		// On activation of the plugin
+	flush_rewrite_rules();
+}
+
+function artists_deactivate() {
+		// On deactivation of the plugin
+	flush_rewrite_rules();
+}
+
+function artists_uninstall() {
+		// On uninstallation of the plugin
+}
+
+	// add_action for the gutenberg block js file found at ./assets/js/block.js
 add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
-	//Activation
+
+	// Links the css file found at ./assets/css/masonry.css
+add_action('wp_enqueue_scripts', 'artists_styles');
+
+	// Links activation hook to artists_activate() function
 register_activation_hook( __FILE__, array($artistsMasonry, 'activate'));
-//Deactivation
+
+	// Links deactivation hook to artists_deactivate() function
 register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
-//Uninstall
+
+	// Links uninstallation hook to artists_uninstall() function
 register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
 
 ?>
