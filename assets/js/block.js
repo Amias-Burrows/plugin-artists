@@ -3,10 +3,10 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 	icon: 'grid-view',
 	category: 'design',
 	attributes: {	// Used as the props in the React code in edit:
-		title: { type: 'array' },
-		description: { type: 'array' },
-		image: { type: 'array' },
-		perma: { type: 'array' },
+		title: { type: 'string' },
+		description: { type: 'string' },
+		image: { type: 'string' },
+		perma: { type: 'string' },
 		amount: { type: 'int' }
 	},
 	edit: function(props) {	// What shows up in the editor
