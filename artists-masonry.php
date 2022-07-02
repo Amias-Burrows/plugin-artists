@@ -14,37 +14,11 @@
 
 defined('ABSPATH') or die("This file is not accessable directly.");
 
-class artistsMasonry {
-	function __construct() {
-		add_action('wp_enqueue_scripts', array($this, 'styles'));
-	}
-
-
-	function styles() {
-		wp_enqueue_style('artists-masonry', plugins_url('assets/css/masonry.css', __FILE__), array(), null, 'all');
-	}
-
-	function activate() {
-		flush_rewrite_rules();
-	}
-
-	function deactivate() {
-		flush_rewrite_rules();
-	}
-
-	function uninstall() {
-	}
-}
-
-if (class_exists('artistsMasonry')) {
-	$artistsMasonry = new artistsMasonry();
-}
-
-function artists_styles() {
+function artists_styles() {	// Includes stylsheet into website
 	wp_enqueue_style('artists-masonry', plugins_url('assets/css/masonry.css', __FILE__), array(), null, 'all');
 }
 
-function artists_gutenberg_block() {
+function artists_gutenberg_block() {	// Includes the gutenberg block item
 	wp_enqueue_script('artists_masonry_block', plugin_dir_url(__FILE__) . 'assets/js/block.js', array('wp-blocks', 'wp-editor'), true, false);
 }
 
@@ -68,6 +42,7 @@ add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 	// Links the css file found at ./assets/css/masonry.css
 add_action('wp_enqueue_scripts', 'artists_styles');
 
+/*
 	// Links activation hook to artists_activate() function
 register_activation_hook( __FILE__, 'artists_activate');
 
@@ -77,4 +52,5 @@ register_deactivation_hook( __FILE__, 'artists_deactivate');
 	// Links uninstallation hook to artists_uninstall() function
 register_uninstall_hook( __FILE__, 'artists_uninstall');
 
+ */
 ?>
