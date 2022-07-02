@@ -8,8 +8,6 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 		image: { type: 'array' },
 		perma: { type: 'array' },
 		amount: { type: 'int' }
-	}
-// Need a Title and Description of page and an image to show with a link to the page as well
 	},
 	edit: function(props) {	// What shows up in the editor
 		function updateTitle(i, event) {
