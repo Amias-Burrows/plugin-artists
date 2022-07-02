@@ -69,12 +69,12 @@ add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 add_action('wp_enqueue_scripts', 'artists_styles');
 
 	// Links activation hook to artists_activate() function
-register_activation_hook( __FILE__, array($artistsMasonry, 'activate'));
+register_activation_hook( __FILE__, 'artists_activate');
 
 	// Links deactivation hook to artists_deactivate() function
-register_deactivation_hook( __FILE__, array( $artistsMasonry, 'deactivate'));
+register_deactivation_hook( __FILE__, 'artists_deactivate');
 
 	// Links uninstallation hook to artists_uninstall() function
-register_uninstall_hook( __FILE__, array( $artistsMasonry, 'uninstall'));
+register_uninstall_hook( __FILE__, 'artists_uninstall');
 
 ?>

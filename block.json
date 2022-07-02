@@ -1,7 +1,0 @@
-{
-	"apiVersion": 2,
-	"title": "Artists Attic Trust Masonry Layout",
-	"name": "artists-masonry/grid-format",
-	"catagory": "layout",
-	"editorScript": "file:./assets/js/block.js"
-}
