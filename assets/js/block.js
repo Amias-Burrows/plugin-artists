@@ -15,7 +15,7 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 		}
 
 		return {
-			/*#__PURE__*/React.createElement('div', null, /*#__PURE__*/React.createElement('p', null, 'The content'));
+			/*#__PURE__*/React.createElement('p', null, 'The Content');
 		};
 	},
 	save: function(props) {	//What shows up on the frontend
