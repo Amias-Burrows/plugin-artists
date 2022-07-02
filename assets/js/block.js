@@ -1,25 +1,35 @@
-let block = function(title, description, image, perma) {	// Attempt at object function
-	let title[] = title;
-	let description[] = description;
-	let image[] = image;
-	let perma[] = perma;
-	return null;
-}
 wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gutenberg block
 	title: 'Artists Attic Masonry Grid',
 	icon: 'grid-view',
 	category: 'design',
 	attributes: {	// Used as the props in the React code in edit:
-		object: { type: 'block' },
-		other: { type: 'array' }
+		title: { type: 'array' },
+		description: { type: 'array' },
+		image: { type: 'array' },
+		perma: { type: 'array' },
+		amount: { type: 'int' }
 	}
 // Need a Title and Description of page and an image to show with a link to the page as well
 	},
 	edit: function(props) {	// What shows up in the editor
+		function updateTitle(i, event) {
+			props.settAttributes{title[i]: event.target.value }
+		}
+
 		return {
-			/*__PURE__*/React.createElement('div', null, {
-				React.createElement('input', null)
-			});
+			/*__PURE__*/React.createElement('div', null, /*__PURE__*/
+				for ( let i = 0; i > props.attributes.amount; i++ ) {
+					React.createElement('label', { /*__PURE__*/
+						for: 'title'
+					}, 'Title'),
+					React.createElement('input', { /*__PURE__*/
+						name: 'title',
+						type: 'text',
+						value: props.attributes.title[i],
+						onChange: (e) => updateTitle(i)
+					}
+				}
+			);
 		};
 	},
 	save: function(props) {	//What shows up on the frontend
