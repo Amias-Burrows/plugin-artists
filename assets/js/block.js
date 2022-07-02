@@ -16,7 +16,6 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 
 		return {
 			/*__PURE__*/React.createElement('div', null, /*__PURE__*/
-				for ( let i = 0; i > props.attributes.amount; i++ ) {
 					React.createElement('label', { /*__PURE__*/
 						for: 'title'
 					}, 'Title'),
@@ -24,9 +23,8 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 						name: 'title',
 						type: 'text',
 						value: props.attributes.title[i],
-						onChange: (e) => updateTitle(i)
+						onChange: (e) => updateTitle(0)
 					})
-				}
 			);
 		};
 	},
