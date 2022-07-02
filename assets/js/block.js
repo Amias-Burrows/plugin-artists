@@ -10,7 +10,7 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 		amount: { type: 'int' }
 	},
 	edit: function(props) {	// What shows up in the editor
-		function updateTitle(i, event) {
+		function updateTitle(event) {
 			props.setAttributes{title[i]: event.target.value }
 		}
 
@@ -23,7 +23,7 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 						name: 'title',
 						type: 'text',
 						value: props.attributes.title[i],
-						onChange: (e) => updateTitle(0)
+						onChange: updateTitle
 					})
 			);
 		};
