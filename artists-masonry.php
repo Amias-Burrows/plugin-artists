@@ -2,7 +2,7 @@
 /*
  * @package ArtistsMasonry
  *
- * Plugin Name: Artists Masonry
+ * Plugin Name: Artists Masonry (Gutenberg Branch)
  * Plugin URI: https://amias.dev
  * Description: Plugin for Masonry design.
  * Version: 1.0
