@@ -11,21 +11,18 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 	},
 	edit: function(props) {	// What shows up in the editor
 		function updateTitle(event) {
-			props.setAttributes{title[i]: event.target.value }
+			props.setAttributes{title[0]: event.target.value }
 		}
 
 		return {
-			/*__PURE__*/React.createElement('div', null, /*__PURE__*/
-					React.createElement('label', { /*__PURE__*/
-						for: 'title'
-					}, 'Title'),
-					React.createElement('input', { /*__PURE__*/
-						name: 'title',
-						type: 'text',
-						value: props.attributes.title[i],
-						onChange: updateTitle
-					})
-			);
+			/*__PURE__*/React.createElement('div', null, /*__PURE__*/React.createElement('label', { 
+				for: 'title'
+			}, 'Title'),React.createElement('input', {
+				name: 'title',
+				type: 'text',
+				value: props.attributes.title[i],
+				onChange: updateTitle
+			}));
 		};
 	},
 	save: function(props) {	//What shows up on the frontend
