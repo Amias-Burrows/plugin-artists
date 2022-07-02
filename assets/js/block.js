@@ -10,10 +10,6 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 		amount: { type: 'int' }
 	},
 	edit: function(props) {	// What shows up in the editor
-		function updateTitle(event) {
-			props.setAttributes{title[0]: event.target.value }
-		}
-
 		return {
 			/*#__PURE__*/React.createElement('p', null, 'The Content');
 		};
