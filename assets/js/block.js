@@ -25,7 +25,7 @@ wp.blocks.registerBlockType('artists-masonry/custom-block', {	// The actual Gute
 						type: 'text',
 						value: props.attributes.title[i],
 						onChange: (e) => updateTitle(i)
-					}
+					})
 				}
 			);
 		};

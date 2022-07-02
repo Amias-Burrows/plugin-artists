@@ -42,7 +42,6 @@ add_action('enqueue_block_editor_assets', 'artists_gutenberg_block');
 	// Links the css file found at ./assets/css/masonry.css
 add_action('wp_enqueue_scripts', 'artists_styles');
 
-/*
 	// Links activation hook to artists_activate() function
 register_activation_hook( __FILE__, 'artists_activate');
 
@@ -51,6 +50,5 @@ register_deactivation_hook( __FILE__, 'artists_deactivate');
 
 	// Links uninstallation hook to artists_uninstall() function
 register_uninstall_hook( __FILE__, 'artists_uninstall');
- */
 
 ?>
